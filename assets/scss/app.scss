@@ -2,64 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    font-family: 'Josefin Sans', sans-serif;
+h1, h2, h3, .name {
+  font-family: 'Bodoni Moda', serif;
 }
 
-.bg-layers {
-    -webkit-animation: filter-animation 4s infinite;
-    animation: filter-animation 4s infinite;
+@layer components {
+  .white-layer{
+    background:white;
   }
-  
-.bg-scale {
--webkit-animation: filter-scale 8s infinite;
-animation: filter-scale 8s infinite;
+  .gradient-1{
+    @apply from-violet-900 to-green-800
+  }
+  .gradient-2{
+    @apply from-lime-900 to-yellow-800
+  }
+  .app-theme .light{
+    @apply hidden
+  }
+  .app-theme .night{
+    @apply block
+  }
+
+  .app-theme{
+    @apply bg-white
+  }
+  .app-theme .bg-lime-300{
+    @apply bg-lime-500
+  }
+  .app-theme .bg-white{
+    @apply bg-neutral-400
+  }
+  .app-theme .bg-neutral-800{
+    @apply bg-neutral-100 border border-neutral-200
+  }
+  .app-theme .bg-neutral-700{
+    @apply bg-neutral-100 bg-opacity-100
+  }
+  .app-theme .gradient-1{
+    @apply from-violet-200 to-green-300
+  }
+  .app-theme .gradient-2{
+    @apply from-lime-200 to-fuchsia-300
+  }
+
+  .app-theme .text-white{
+    @apply text-neutral-900
+  }
+  .app-theme .text-neutral-400{
+    @apply text-neutral-500
+  }
+  .app-theme .text-neutral-300{
+    @apply text-neutral-600
+  }
+  .app-theme .text-lime-300{
+    @apply text-lime-600
+  }
+  .app-theme .border-neutral-800{
+    @apply border-neutral-200
+  }
+  .app-theme .ring-neutral-900{
+    @apply ring-white
+  }
+
+  .app-theme .opacity-40{
+    @apply opacity-60
+  }
+  .app-theme .opacity-25{
+    @apply opacity-10
+  }
+
+  .app-theme .bj-white-logo{
+    @apply hidden
+  }
+  .app-theme .bj-dark-logo{
+    @apply block
+  }
+  .app-theme .app-layer{
+    transform:translateX(-50%);
+  }
+
+  .active-active span{
+    @apply bg-lime-300
+  }
+  .active-active h2{
+    @apply text-lime-300
+  }
+
+  .app-theme .active-active span{
+      @apply bg-lime-500
+  }
+  .app-theme .active-active h2{
+      @apply text-lime-500
+  }
 }
-  
-@-webkit-keyframes filter-animation {
-    0% {
-      -webkit-filter: hue-rotate(0deg);
-    }
-    50% {
-      -webkit-filter: hue-rotate(45deg);
-    }
-    60% {
-        -webkit-filter: hue-rotate(65deg);
-    }
-    70% {
-        -webkit-filter: hue-rotate(75deg);
-    }
-    80% {
-        -webkit-filter: hue-rotate(120deg);
-    }
-    90% {
-        -webkit-filter: hue-rotate(360deg);
-    }
-    100% {
-      -webkit-filter: hue-rotate(0deg);
-    }
-  }
-  
-  @keyframes filter-animation {
-    0% {
-      filter: hue-rotate(0deg);
-    }
-    50% {
-      filter: hue-rotate(45deg);
-    }
-    100% {
-      filter: hue-rotate(0deg);
-    }
-  }
-  
-  @keyframes filter-scale {
-    0% {
-      transform:scale(1);
-    }
-    50% {
-      transform:scale(1.4);
-    }
-    100% {
-      transform:scale(.8);
-    }
-  }
